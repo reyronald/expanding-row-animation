@@ -1,0 +1,54 @@
+:root {
+  --transition-duration: 0.15s;
+}
+
+body {
+  padding: 40px;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr * {
+  transition: all var(--transition-duration)
+    cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+th,
+td:not(:empty) {
+  padding: 5px;
+}
+
+td:not(:empty) {
+  border-top: 1px solid black;
+}
+
+.expanding-box {
+  border: 2px solid red;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: transform var(--transition-duration)
+      cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0s cubic-bezier(0.645, 0.045, 0.355, 1) var(--transition-duration);
+  transform-origin: top;
+  transform: scaleY(0.27);
+}
+
+.expanding-box--animation {
+  transition: transform var(--transition-duration)
+      cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: scale(1.05, 1);
+  opacity: 1;
+}
