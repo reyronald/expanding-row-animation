@@ -92,7 +92,7 @@ function ExpandableRow({ expanded, expandingBoxRef }) {
             const rect2 = childRow.getBoundingClientRect();
 
             expandingBoxRef.current.style.height =
-              rect1.height + rect2.height + 2 + "px";
+              rect1.height + rect2.height + -1 + "px";
             expandingBoxRef.current.style.top = clickedRow.offsetTop + "px";
             expandingBoxRef.current.classList.add("expanding-box--animation");
           }}
